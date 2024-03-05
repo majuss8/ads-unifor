@@ -33,4 +33,29 @@ I --> Z([FIM])
 12		ESCREVA "O número deve ser positivo"
 13	FIM_ALGORITMO
 ```
-
+### Exercício 4
+4) Represente, em fluxograma e pseudocódigo, um algoritmo que, a partir da ==idade do
+candidato(a)==, determinar se ==pode ou não tirar a CNH==. Caso não atender a restrição de idade, calcular ==quantos anos faltam== para o candidato estar apto.
+#### Fluxograma
+```mermaid
+flowchart TD
+A([INICIO]) --> B{{Digite sua idade: }}
+B --> C[idade]
+C --> D{idade < 18}
+D --NÃO--> E{{O usuário está apto para tirar a CNH!}} --> Z([FIM])
+D --SIM--> F[tempoQueFalta <- 18 - idade]
+F --> G{{Ainda restam 'tempoQueFalta' anos para tirar a CNH}} --> Z([FIM])
+```
+#### Pseudocódigo
+```
+1	ALGORITMO verifica_idade_CNH
+2	DECLARE idade, tempoQueFalta NUMERICO
+3	ESCREVA "Digite sua idade: "
+4	LEIA idade
+5	SE idade < 18 ENTAO
+6		tempoQueFalta <- 18 - idade
+7		ESCREVA "Ainda restam 'tempoQueFalta' anos para tirar a CNH"
+8	SENAO
+9		ESCREVA "O usuário está apto para tirar a CNH!"
+10	FIM_ALGORITMO
+```
