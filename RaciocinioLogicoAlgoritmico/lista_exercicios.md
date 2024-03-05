@@ -2,7 +2,7 @@
 **Orientador:** Prof. Ricardo Carubbi
 ## Lista exercícios
 ### Exercício 3
-3) Represente, em fluxograma e pseudocódigo, um algoritmo para determinar se um ==número inteiro e positivo é par ou ímpar==.
+3) Represente, em fluxograma e pseudocódigo, um algoritmo para determinar se um número inteiro e positivo é par ou ímpar.
 #### Fluxograma
 ```mermaid
 flowchart TD
@@ -34,8 +34,8 @@ I --> Z([FIM])
 13	FIM_ALGORITMO
 ```
 ### Exercício 4
-4) Represente, em fluxograma e pseudocódigo, um algoritmo que, a partir da ==idade do
-candidato(a)==, determinar se ==pode ou não tirar a CNH==. Caso não atender a restrição de idade, calcular ==quantos anos faltam== para o candidato estar apto.
+4) Represente, em fluxograma e pseudocódigo, um algoritmo que, a partir da idade do
+candidato(a), determinar se pode ou não tirar a CNH. Caso não atender a restrição de idade, calcular quantos anos faltam para o candidato estar apto.
 #### Fluxograma
 ```mermaid
 flowchart TD
