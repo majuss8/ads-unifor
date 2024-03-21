@@ -1,15 +1,13 @@
-<img src="https://drive.google.com/uc?id=1SOzRTjUt7cuBJpSqoK90fcAiKBrnpUJo" width="400">
-
-**Curso:** preencha com seus dados <br>
-**Disciplina:** preencha com seus dados <br>
+**Curso:** Análise e Desenvolvimento de Sistemas <br>
+**Disciplina:** Raciocínio Lógico Algoritmico<br>
 **Código/Turma:** preencha com seus dados <br>
 **Professor:** Ricardo Carubbi <br>
-**Data:** preencha com a data de envio <br>
-**Aluno(a):** preencha com seus dados <br>
-**Matrícula:** preencha com seus dados <br>
+**Data:** 21/03/2024 <br>
+**Aluno(a):** Maria Júlia Soares Siqueira Melo <br>
+**Matrícula:** 2413772 <br>
 
-**1a chamada (Sim/Não):** preencha com a opção correta <br>
-**2a chamada (Sim/Não):** preencha com a opção correta
+**1a chamada (Sim/Não):** Sim<br>
+**2a chamada (Sim/Não):** Não
 
 # Avaliação Diagnóstica 1
 
@@ -71,10 +69,19 @@ I --> J{{"b =", b}}
 #### Pseudocódigo (1 ponto)
 
 ```
-Algoritmo TrocaValores
-INICIO
-...
-FIM
+1	Algoritmo TrocaValores
+2	DECLARE a, b, aux: INTEIRO
+3	INICIO
+4	ESCREVA "Digite o valor da a: "
+5	LEIA a
+6	ESCREVA "Digite o valor da b: "
+7	LEIA b
+8	aux <- a
+9	a <- b
+10	b <- aux
+11	ESCREVA "a =", a
+12	ESCREVA "b =", b
+13	FIM
 ```
 
 #### Teste de mesa
@@ -82,6 +89,7 @@ FIM
 | a  | b  | aux | a  | b  | saída 1 | saída 2 | 
 | -- | -- | --  | -- | -- | --      | --      | 
 | 0  | 1  | 0   | 1  | 0  | a = 1   | b = 0   |
+| 3  | 4  | 3   | 4  | 3  | a = 4   | b = 3   |
 
 ### Questão 2 - Contagem (1 ponto)
 
@@ -140,9 +148,14 @@ J --LOOP--> E
 #### Pseudocódigo 01 (1 ponto)
 
 ```
-Algoritmo ContaAprovacoes
-INICIO
-...
+1	Algoritmo ContaAprovacoes
+2	DECLARE n, cont, i: INTEIRO, nota: REAL
+3	INICIO
+4	ESCREVA "Digite o número de alunos: "
+5	LEIA n
+6	cont <- 0
+7	i <- 1
+8	ENQUANTO i <= n
 FIM
 ```
 
