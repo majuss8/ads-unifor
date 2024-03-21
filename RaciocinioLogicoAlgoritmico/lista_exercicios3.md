@@ -1,136 +1,195 @@
-**Disciplina:** Raciocínio Lógico Algorítmico
-**Orientador:** Prof. Ricardo Carubbi
-## Lista exercícios - Estruturas de Repetição
 
-1) Atualize o algoritmo para determinar se um número inteiro e positivo é par ou ímpar, usando uma laço condicional para aceitar apenas números maiores ou iguais a zero.
+# UNIFOR
+**Nome**: Nome do estudante <br>
+**Disciplina**: Raciocínio lógico algorítmico
 
-### Fluxograma
+## Exercício exemplo 1
+Implemente e teste um programa que imprima os n primeiros números.
+
+#### Fluxograma
 ```mermaid
 flowchart TD
 A([INICIO]) --> B{{Digite um número: }}
-B --> C[/num/]
-C --> D{num > -1}
-D --TRUE--> E{num % 2 == 0}
-D --FALSE--> H{{"'[ERRO] O número informado é negativo, digite um valor positivo!'"}}
-H --> B
-E --TRUE--> F{{'O número informado é par!'}}
-E --FALSE--> G{{'O número informado é ímpar!'}}
-F --> I([FIM])
-G --> I
-``` 
-
-### Pseudocódigo
-```
-1)	ALGORITMO par_impar
-2)	DECLARE num: INTEIRO
-3)	INICIO
-4)	ESCREVA 'Digite um número: '
-5)	LEIA num
-6)	SE num < 0 ENTAO
-7)		REPITA
-8)			ESCREVA '[ERRO] O número informado é negativo, digite um valor positivo: '
-9)			LEIA num
-10)		ATE_QUE num > -1
-11)	FIM_SE
-12)	SE num % 2 == 0 ENTAO
-13)		ESCREVA 'O número informado é par!'
-14)	SENAO 
-15)		ESCREVA 'O número informado é ímpar!'
-16)	FIM_ALGORITMO
-```
-
-### Teste de Mesa
-
-| num | num > -1 | num % 2 == 0 | Saída
-|--- |--- |--- |--- |
-| -1 | false |  | '[ERRO] O número informado é negativo, digite um valor positivo: ' |
-| 0 | true | true | 'O número informado é par!' |
-| 1 | true | false | 'O número informado é ímpar!'|
-| 2 | true | true | 'O número informado é par!'
-
-2) Faça um algoritmo que exiba na tela uma contagem de 0 até 30, exibindo apenas os múltiplos de 3.
-
-### Fluxograma
-```mermaid
-flowchart TD
-A([INICIO]) --> B[/n, num/]
-B --> C[n = 30]
-C --> D[num = 1]
+B --> C[\n\]
+C --> D[\num = 1\]
 D --> E{num <= n}
-E --FALSE--> H([FIM])
-E --TRUE--> F{{"'Número ', num"}}
+E --FALSE--> I([FIM])
+E --TRUE--> F{{"Num", num}}
 F --> G[num =+ 1]
-G --> E
+G --LOOP--> E
 ```
 
-### Pseudocódigo
+#### Pseudocódigo
 ```
-1)	ALGORITMO contagem_1_a_30
-2)	DECLARE n, num: INTEIRO
-3)	INICIO
-4)	n <- 30
-5)	num <- 1
-6)	ENQUANTO num <= n FAÇA
-7)		ESCREVA “Número ”, num
-8)		num ← num + 1
-9)	FIM_ENQUANTO
-10)	FIM
+1 ALGORITMO print_n_primeiros
+2 DECLARE n, num: INTEIRO
+3 INICIO
+4 ESCREVA “Digite um número: ”
+4 LEIA n			// variável de entrada n
+4 num ← 1			// variável num inicializada
+5 ENQUANTO num <= n FAÇA	// n iterações
+7	ESCREVA “Número ”, num
+8	num ← num + 1		// num =+ 1 (incremento)
+8 FIM_ENQUANTO
+9 FIM
 ```
 
-### Teste de Mesa
-| it | n | num | num <= n | Saída | num =+ 1 |
-|--- |--- |--- |--- |--- |--- |
-| 1º | 30 | 1 | true | Número 1 | 2 |
-| 2º | 30 | 2 | true | Número 2 | 3 |
-| 3º | 30 | 3 | true | Número 3 | 4 |
-| ... | ... | ... | ... | ... | ... |
-| 30º | 30 | 30 | true | Número 30 | 31 |
-| 31º | 30 | 31 | false |  |  |
+#### Teste de mesa
+| it | n  | num | num <= n | Saída      | num =+ 1 |
+| -- | -- | --  | --       | --         | --       |
+| 1  | 10 | 1   | True     | Número 1   | 2        |
+| 2  | 10 | 2   | True     | Número 2   | 3        |
+| 3  | 10 | 3   | True     | Número 3   | 4        |
+| 4  | 10 | 4   | True     | Número 4   | 5        |
+| 5  | 10 | 5   | True     | Número 5   | 6        |
+| 6  | 10 | 6   | True     | Número 6   | 7        |
+| 7  | 10 | 7   | True     | Número 7   | 8        |
+| 8  | 10 | 8   | True     | Número 8   | 9        |
+| 9  | 10 | 9   | True     | Número 9   | 10       |
+| 10 | 10 | 11  | True     | Número 10  | 11       |
+| 11 | 10 | 11  | False    |            |          |
 
-3) Dada uma sequência de números inteiros, calcular a sua soma. Por exemplo, para a sequência {12, 17, 4, -6, 8, 0}, o seu programa deve escrever o número 35. 
+## Exercício exemplo 2
+Implemente e teste um programa que some os n primeiros números.
 
-### Fluxograma
+#### Fluxograma
 ```mermaid
 flowchart TD
-A([INICIO]) --> B{{"Digite uma sequência de números inteiros: "}}
-B --> C[/array/]
-C --> D[soma = 0]
-D --> E[/i = 1 ATE array\]
+A([INICIO]) --> B{{Digite um número: }}
+B --> C[\n\]
+C --> D[\soma = 0\]
+D --> E[[i=1 ATÉ n PASSO 1]]
+E --> G([FIM])
 E --> F[soma =+ i]
-F --> G{{'A soma da lista de números informada é igual a ' soma}}
-F --> E
-G --> H([FIM])
-E --> H
-```
-### Pseudocódigo
-```
-1)	ALGORITMO soma_numeros
-2)	DECLARE array, soma: INTEIRO
-3)	INICIO
-4)	ESCREVA 'Digite uma sequência de números inteiros: '
-5)	LEIA array
-6)	soma <- 0
-7)	PARA i DE 1 ATÉ array FAÇA
-8)		soma ← soma + i
-9)	FIM_PARA
-10)	ESCREVA “A soma da lista de números informada é igual a ”, soma
-11)	FIM
+F --LOOP--> E
 ```
 
-### Teste de Mesa
-| it | array | soma | i | soma =+ 1 |
-|--- |--- |--- |--- |--- |
-| 1º | {12, 17, 4, -6, 8, 0} | 0 | 12 | 12 |
-| 2º | {12, 17, 4, -6, 8, 0} | 12 | 17 | 29 |
-| 3º | {12, 17, 4, -6, 8, 0} | 29 | 4 | 33 |
-| 4º | {12, 17, 4, -6, 8, 0} | 33 | -6 | 27 |
-| 5º | {12, 17, 4, -6, 8, 0} | 27 | 8 | 35 |
-| 6º | {12, 17, 4, -6, 8, 0} | 35 | 0 | 35 |
+#### Pseudocódigo
+```
+1  ALGORITMO	soma_n_numeros()
+2  DECLARE	n, i, soma: INTEIRO
+3  INICIO
+4  ESCREVA “Digite a quantidade de números: ”
+5  LEIA n		// variável de entrada n
+7  soma ← 0		// variável soma inicializada
+6  PARA i DE 1 ATÉ n PASSO 1 FAÇA
+7	soma ← soma + i	// soma =+ i (incremento)
+8  FIM_PARA
+9  ESCREVA “A soma é igual a ”, soma
+10 FIM
+```
 
-4) Escreva um programa que leia a nota de diversos alunos, até que seja digitada uma nota negativa. Nesse momento, ele mostra a média aritmética de todas as notas lidas e quantas notas foram lidas. Ex. Foram lidas 14 notas. A média aritmética é 6.75!
+#### Teste de mesa
+| it | n  | soma | i  | soma =+ i |
+| -- | -- | --   | -- | --        |
+| 1  | 10 | 0    | 1  | 1         |
+| 2  | 10 | 1    | 2  | 3         |
+| 3  | 10 | 3    | 3  | 6         |
+| 4  | 10 | 6    | 4  | 10        |
+| 5  | 10 | 10   | 5  | 15        |
+| 6  | 10 | 15   | 6  | 21        |
+| 7  | 10 | 21   | 7  | 28        |
+| 8  | 10 | 28   | 8  | 36        |
+| 9  | 10 | 36   | 9  | 45        |
+| 10 | 10 | 45   | 10 | 55        | 
 
-### Fluxograma
+## Lista de exercícios 03
+
+### Exercício 01 (2.5 pontos)
+Atualize o algoritmo para determinar se um número inteiro e positivo é par ou ímpar, usando uma laço condicional para aceitar apenas números maiores ou iguais a zero. 
+
+#### Fluxograma (1.0 ponto)
+
 ```mermaid
 flowchart TD
+A([INICIO]) --> B([FIM])
+```
+
+#### Pseudocódigo (1.0 ponto)
 
 ```
+Algoritmo ClassificaCategoria
+FIM_ALGORITMO
+```
+
+#### Teste de mesa (0.5 ponto)
+
+| nome_coluna1 | nome_coluna2 | nome_coluna3 | nome_coluna4 | nome_coluna5 | 
+|      --      |      --      |      --      |      --      |      --      | 
+| Adicione     | espaço       | se quiser    |  alinhar     | as barras    |
+| verticais,   | mas          | não é        | obrigatório. | Entendido ?  |
+
+### Exercício 02 (2.5 pontos)
+Faça um algoritmo que exiba na tela uma contagem de 0 até 30, exibindo apenas os múltiplos de 3.
+
+#### Fluxograma (1.0 ponto)
+
+```mermaid
+flowchart TD
+A([INICIO]) --> B([FIM])
+```
+
+#### Pseudocódigo (1.0 ponto)
+
+```
+Algoritmo ClassificaCategoria
+FIM_ALGORITMO
+```
+
+#### Teste de mesa (0.5 ponto)
+
+| nome_coluna1 | nome_coluna2 | nome_coluna3 | nome_coluna4 | nome_coluna5 | 
+|      --      |      --      |      --      |      --      |      --      | 
+| Adicione     | espaço       | se quiser    |  alinhar     | as barras    |
+| verticais,   | mas          | não é        | obrigatório. | Entendido ?  |
+
+### Exercício 03 (2.5 pontos)
+Dada uma sequência de números inteiros, calcular a sua soma. 
+Por exemplo, para a sequência {12, 17, 4, -6, 8, 0}, o seu programa deve escrever o número 35.
+
+#### Fluxograma (1.0 ponto)
+
+```mermaid
+flowchart TD
+A([INICIO]) --> B([FIM])
+```
+
+#### Pseudocódigo (1.0 ponto)
+
+```
+Algoritmo ClassificaCategoria
+FIM_ALGORITMO
+```
+
+#### Teste de mesa (0.5 ponto)
+
+| nome_coluna1 | nome_coluna2 | nome_coluna3 | nome_coluna4 | nome_coluna5 | 
+|      --      |      --      |      --      |      --      |      --      | 
+| Adicione     | espaço       | se quiser    |  alinhar     | as barras    |
+| verticais,   | mas          | não é        | obrigatório. | Entendido ?  |
+
+### Exercício 04 (2.5 pontos)
+Escreva um programa que leia a nota de diversos alunos, até que seja digitada uma nota negativa. 
+Nesse momento, ele mostra a média aritmética de todas as notas lidas e quantas notas foram lidas. 
+Ex. Foram lidas 14 notas. A média aritmética é 6.75!
+
+#### Fluxograma (1.0 ponto)
+
+```mermaid
+flowchart TD
+A([INICIO]) --> B([FIM])
+```
+
+#### Pseudocódigo (1.0 ponto)
+
+```
+Algoritmo ClassificaCategoria
+FIM_ALGORITMO
+```
+
+#### Teste de mesa (0.5 ponto)
+
+| nome_coluna1 | nome_coluna2 | nome_coluna3 | nome_coluna4 | nome_coluna5 | 
+|      --      |      --      |      --      |      --      |      --      | 
+| Adicione     | espaço       | se quiser    |  alinhar     | as barras    |
+| verticais,   | mas          | não é        | obrigatório. | Entendido ?  |
