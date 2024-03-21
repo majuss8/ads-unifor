@@ -62,15 +62,15 @@ Sabe-se que os funcionários que recebem atualmente salário de até R$ 500 ter�
 flowchart TD
 A([INICIO]) --> B{{Informe seu salário:}}
 B --> C[\salario\]
-C --> D{salario < 0}
-D --FALSE--> E{salario <= 500}
-E --FALSE--> F["salario += salario + (salario * 0.10)"]
-E --TRUE--> G["salario += salario + (salario * 0.20)"]
-F --> H{{'O novo salário será de R$ ', salario}}
-G --> H
-D --TRUE--> I{{"O valor deve ser postivo!"}}
-H --> J([FIM])
-I --> J
+C --> D{salario >= 0}
+D --FALSE--> E{{"O valor deve ser postivo!"}}
+D --TRUE--> F{salario <= 500}
+F --FALSE--> G["salario += salario + (salario * 0.10)"]
+F --TRUE--> H["salario += salario + (salario * 0.20)"]
+G --> I{{'O novo salário será de R$ ', salario}}
+H --> I
+I --> J([FIM])
+E --> J
 ```
 #### Pseudocódigo (1.0 ponto)
 
@@ -80,29 +80,29 @@ Algoritmo novo_salario
 2	INICIO
 3	ESCREVA: "Informe seu salário: "
 4	LEIA salario 
-5	SE salario < 0 ENTAO
-6		ESCREVA "O valor deve ser postivo!"
-7	SENAO
-8		SE salario <= 500 ENTAO
-9			salario += salario + (salario * 0.20)
-10			ESCREVA 'O novo salário será de R$ ', salario
-11		SENAO
-12			salario += salario + (salario * 0.10)
-13			ESCREVA 'O novo salário será de R$ ', salario
-14		FIM_SE
+5	SE salario >= 0 ENTAO
+6		SE salario <= 500 ENTAO
+7			salario += salario + (salario * 0.20)
+8			ESCREVA 'O novo salário será de R$ ', salario
+9		SENAO
+10			salario += salario + (salario * 0.10)
+11			ESCREVA 'O novo salário será de R$ ', salario
+12		FIM_SE
+13	SENAO
+14		ESCREVA "O valor deve ser postivo!"
 15	FIM_SE
 16	FIM_ALGORITMO
 ```
 #### Teste de mesa (1.0 ponto)
 
-| salario | salario < 0 | salario <= 500 | Saída | 
+| salario | salario >= 0 | salario <= 500 | Saída | 
 |      --      |      --      |      --      |      --      |    
-| 250 | F | V | 'O novo salário será de R$ 300' |
-| 500 | F | V | 'O novo salário será de R$ 600' |
-| 732.89 | F | F | 'O novo salário será de R$ 806.179' |
-| 1250 | F | F | 'O novo salário será de R$ 1375' |
-| -300 | V |  | "O valor deve ser postivo!" |
-| -300.65 | V |  | "O valor deve ser postivo!" |
+| 250 | V | V | 'O novo salário será de R$ 300' |
+| 500 | V | V | 'O novo salário será de R$ 600' |
+| 732.89 | V | F | 'O novo salário será de R$ 806.179' |
+| 1250 | V | F | 'O novo salário será de R$ 1375' |
+| -300 | F |  | "O valor deve ser postivo!" |
+| -300.65 | F |  | "O valor deve ser postivo!" |
 
 ## Exercício 03 (3 pontos)
 Represente, em fluxograma e pseudocódigo, um algoritmo para calcular a média aritmética entre duas notas de um aluno e mostrar sua situação, que pode ser aprovado ou reprovado.
