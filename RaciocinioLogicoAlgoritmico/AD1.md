@@ -155,8 +155,17 @@ J --LOOP--> E
 5	LEIA n
 6	cont <- 0
 7	i <- 1
-8	ENQUANTO i <= n
-FIM
+8	ENQUANTO i <= n FAÇA
+9		ESCREVA "Digite a nota do aluno", i
+10		LEIA nota
+11		SE nota >= 50 && nota <= 100 ENTAO
+12			cont <- cont + 1
+13			i <- i + 1
+14		SENAO
+15			i <- i + 1
+16	FIM_ENQUANTO
+17	ESCREVA "Número de alunos aprovados: cont"
+18	FIM_ALGORITMO
 ```
 
 #### Teste de mesa 01
@@ -216,10 +225,25 @@ K --LOOP--> G
 #### Pseudocódigo (1 ponto)
 
 ```
-Algoritmo SomaNumeros
-INICIO
-...
-FIM
+1	Algoritmo SomaNumeros
+2	DECLARE n, i: INTEIRO, soma, num: REAL
+3	INICIO
+4	ESCREVA "Digite a quantidade de números:"
+5	LEIA n
+6	SE n >= 0 ENTAO
+7		soma <- 0
+8		i <- 1
+9		ENQUANTO i <= n FAÇA
+10			ESCREVA "Digite um número: "
+11			LEIA num
+12			soma <- soma + num
+13			i <- i + 1
+14		FIM_ENQUANTO
+15		ESCREVA "A soma dos numeros é " , soma
+16	SENAO
+17		ESCREVA "O valor deve ser maior ou igual a zero!"
+18	FIM_SE
+19	FIM_ALGOTITMO
 ```
 
 #### Teste de mesa
@@ -270,10 +294,20 @@ I --LOOP--> E
 #### Pseudocódigo (1 ponto)
 
 ```
-Algoritmo SomaSerie
-INICIO
-...
-FIM
+1	Algoritmo SomaSerie
+2	DECLARE n, S, i, numerador, denominador: INTEIRO, termo: REAL
+3	INICIO
+4	ESCREVA "Digite o número de termos da série S: "
+5	LEIA n
+6	S <- 0
+7	PARA i DE 1 ATÉ n PASSO 1 FAÇA
+8		numerador <- 2 * i + 1
+9		denominador <- 2 * i + 2
+10		termo <- numerador / denominador
+11		S <- S + termo
+12	FIM_PARA
+13	ESCREVA "Soma da série S é ", S
+14	FIM_ALGORITMO
 ```
 
 #### Teste de mesa (0.25 ponto)
@@ -318,10 +352,21 @@ H --> I
 #### Pseudocódigo (2 pontos)
 
 ```
-Algoritmo CalcFatorial
-INICIO
-...
-FIM
+1	Algoritmo CalcFatorial
+2	DECLARE n, i, fator: INTEIRO
+3	INICIO
+4	ESCREVA "Digite um numero inteiro nao-negativo:"
+5	LEIA n
+6	SE n >= 0 ENTAO
+7		fator <- 1
+8		PARA i DE 1 ATÉ n PASSO 1 FAÇA
+9			fator <- fator * i
+10		FIM_PARA
+11		ESCREVA "O fatorial de, n, é: ", fator
+12	SENAO
+13		ESCREVA "O valor deve ser maior ou igual a zero!"
+14	FIM_SE
+15	FIM_ALGORITMO
 ```
 
 #### Teste de mesa
@@ -368,7 +413,7 @@ I --LOOP--> E
 ```
 Algoritmo GeraFibonacci
 INICIO
-...
+
 FIM
 ```
 #### Teste de mesa
@@ -419,7 +464,7 @@ E --> W
 ```
 Algoritmo InverteInteiro
 INICIO
-...
+
 FIM
 ```
 
