@@ -32,7 +32,7 @@ I --> Z
 4  ESCREVA "Digite um número: "
 4  LEIA numero
 5  SE numero >= 0 ENTAO                  
-6    resto = numero % 2                 
+6    resto <- numero % 2                 
 7    SE resto == 0 ENTAO                
 8      ESCREVA "O número informado é par!"
 9    SENAO
@@ -133,7 +133,7 @@ Algoritmo media_notas
 4	LEIA nota1
 5	ESCREVA "Informe a nota 2: "
 6	LEIA nota2
-7	media = (nota1 + nota2) / 2
+7	media <- (nota1 + nota2) / 2
 8	SE media <= 6 ENTAO
 9		ESCREVA "Aluno(a) Reprovado(a)"
 10	SENAO
@@ -182,7 +182,7 @@ Algoritmo idade_cnh
 6		ESCREVA "A idade deve ser postiva!"
 7	SENAO
 8		SE idade < 18 ENTAO
-9			tempoRestante = 18 - idade
+9			tempoRestante <- 18 - idade
 10			ESCREVA "'O candidado não está apto para tirar a CNH, ainda falta(m) ', tempoRestante, ' anos para tirar'"
 11		SENAO
 12			ESCREVA "O candidato está apto para tirar a CNH"
