@@ -411,11 +411,26 @@ I --LOOP--> E
 #### Pseudocódigo (2 pontos)
 
 ```
-Algoritmo GeraFibonacci
-INICIO
-
-FIM
+1	Algoritmo GeraFibonacci
+2	DECLARE n, a, b, i, termo_atual: INTEIRO
+3	INICIO
+4	ESCREVA "Digite o número de termos da série Fibonacci: "
+5	LEIA n
+6	SE n >= 0 ENTAO
+7		a <- 0
+8		b <- 0
+9		PARA i DE 1 ATÉ n PASSO 1 FAÇA
+10			ESCREVA a
+11			termo_atual <- a + b
+12			a <- b
+13			b <- termo_atual
+14			i <- i + 1
+15		FIM_PARA
+16	SENAO
+17		ESCREVA "O valor deve ser maior que zero!"
+18	FIM_ALGORITMO
 ```
+
 #### Teste de mesa
 
 | it | n  | a  | b  | i  | saída | termo_atual = a + b | a = b | b = termo_atual |
