@@ -76,7 +76,7 @@ E --> J
 
 ```
 Algoritmo novo_salario
-1	DECLARE salario: FLOAT
+1	DECLARE salario: REAL
 2	INICIO
 3	ESCREVA: "Informe seu salário: "
 4	LEIA salario 
@@ -127,7 +127,7 @@ I --> J([FIM])
 
 ```
 Algoritmo media_notas
-1	DECLARE nota1, nota2, media: FLOAT
+1	DECLARE nota1, nota2, media: REAL
 2	INICIO
 3	ESCREVA "Informe a nota 1: "
 4	LEIA nota1
