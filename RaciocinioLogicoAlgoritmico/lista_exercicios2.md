@@ -1,142 +1,147 @@
-**Disciplina:** Raciocínio Lógico Algorítmico
-**Orientador:** Prof. Ricardo Carubbi
-## Lista exercícios
-1) Calcule a média de quatro números inteiros dados. 
-#### Fluxograma
-```mermaid
-flowchart TD
-A([INICIO]) --> B{{Digite O valor 1: }}
-B --> C[/valor1/]
-C --> D{{Digite O valor 2: }}
-D --> E[/valor2/]
-E --> F{{Digite O valor 3: }}
-F --> G[/valor3/]
-G --> H{{Digite O valor 4: }}
-H --> I[/valor4/]
-I --> J["media = (valor1 + valor2 + valor3 + valor4) / 4"]
-J --> Q{{"A média dos números informados é ", media}}
-Q --> K([FIM])
-```
-#### Pseudocódigo
-```
-1)	ALGORITMO calc_media
-2)	DECLARE valor1, valor2, valor3, valor4: INTEIRO
-3)			media
-4)	INICIO
-5)	ESCREVA "Digite O valor 1: "
-6)	LEIA valor1
-7)	ESCREVA "Digite O valor 2: "
-8)	LEIA valor2
-9)	ESCREVA "Digite O valor 3: "
-10)	LEIA valor3
-11)	ESCREVA "Digite O valor 4: "
-12)	LEIA valor4
-13)	media -> (valor1 + valor2 + valor3 + valor4) / 4
-14)	ESCREVA 'A média dos números informados é ', media
-15)	FIM
-```
-#### Tabela Teste
-| valor1 | valor2 | valor3 | valor4  | media | Saída
-|--- |--- |--- |--- |--- |--- |
-| -3 | -2 | -6 | -6 | -4.25 | 'A média dos números informados é -4.25' |
-| -2 | 45 | 790 | -65 | 192 | 'A média dos números informados é 192' |
-| 56 | 89 | 54 | 0 | 49.75 | 'A média dos números informados é 49.75'
 
-2) Leia uma temperatura dada na escala Celsius (C) e imprima o equivalente em Fahrenheit (F). (Fórmula de conversão: F = (9/5) * C + 32) 
-#### Fluxograma
-```mermaid
-flowchart TD
-A([INICIO]) --> B{{"'Digite a temperatura em Celsius: '"}}
-B --> C[/celsius/]
-C --> D["fahrenheit = (9/5) * celsius + 32"]
-D --> E{{"'A temperatura informada em Fahrenheit equilave a ', fahrenheit, '°'"}}
-E --> F([FIM])
-```
-#### Pseudocódigo
-```
-1)	ALGORITMO conversor_temperatura
-2)	DECLARE celsius, fahrenheit: FLOAT
-3)	INICIO
-4)	ESCREVA 'Digite a temperatura em Celsius: '
-5)	LEIA celsius
-6)	fahrenheit -> (9/5) * celsius + 32
-7)	ESCREVA 'A temperatura informada em Fahrenheit equilave a ', fahrenheit, '°'
-8)	FIM
-```
-#### Tabela Teste
-| celsius | fahrenheit | Saída |
-|--- |--- |--- |
-| -3 | 26.6 | 'A temperatura informada em Fahrenheit equilave a 26.6°' |
-| 0 | 32 | 'A temperatura informada em Fahrenheit equilave a 32°' |
-| 56.95 | 89 | 'A temperatura informada em Fahrenheit equilave a 134.51°' |
+# UNIFOR
+**Nome**: Nome do estudante <br>
+**Disciplina**: Raciocínio lógico algorítm
 
-3) Leia uma quantidade de chuva dada em polegadas e imprima o equivalente em milímetros (25,4 mm = 1 polegada). 
-#### Fluxograma
-```mermaid
-flowchart TD
-A([INICIO]) --> B{{Digite a quantidade de chuva em polegadas: }}
-B --> C[/chuvaPolegadas/]
-C --> D{chuvaPolegadas > -1}
-D --FALSE--> E{{"'Informe um número positivo de polegadas'"}}
-D --TRUE--> F[chuvaMm = chuvaPolegadas * 25.4]
-F --> G{{"'A quantidade de chuva informada em milímetros é ', chuvaMm, 'mm'"}}
-E --> H([FIM])
-G --> H([FIM])
-```
-#### Pseudocódigo
-```
-1)	ALGORITMO conversor_chuva
-2)	DECLARE chuvaPolegada: INTEIRO,
-3)			chuvaMm: FLOAT
-4)	INICIO
-5)	ESCREVA 'Digite a quantidade de chuva em polegadas: '
-6)	LEIA chuvaPolegada
-7)	SE chuvaPolegada > -1 ENTAO
-8)		chuvaMm = chuvaPolegadas * 25.4
-9)		ESCREVA 'A quantidade de chuva informada em milímetros é', chuvaMm, 'mm'
-10)	SENAO 
-11)	ESCREVA 'Informe um número positivo de polegadas'
-12) FIM_SE
-13)	FIM
-```
-#### Tabela Teste
-| chuvaPolegada | chuvaPolegada > -1 | chuvaMm | Saída |
-|--- |--- |--- |--- |
-| -20 | false |  | 'Informe um número positivo de polegadas' |
-| 0 | true | 0 | 'A quantidade de chuva informada em milímetros é 0mm' |
-| 24 | true | 609.6 | 'A quantidade de chuva informada em milímetros é 609.6mm' |
+## Exercício exemplo
+Represente, em fluxograma e pseudocódigo, um algoritmo para calcular o adicional de salário de funcionário por cargo de uma empresa fictícia. Sabe-se que os funcionários de cargo técnico receberão reajuste de 50%, cargo de gerência, um reajuste de 30% e demais, um reajuste de 10%. 
 
-4) O custo ao consumidor de um carro novo é a soma do custo de fábrica com a porcentagem do distribuidor e dos impostos, ambos aplicados ao custo de fábrica. Supondo que a porcentagem do distribuidor seja de 12% e a dos impostos de 45%, prepare um algoritmo para ler o custo de fábrica do carro e imprimir o custo ao consumidor.
 #### Fluxograma
 ```mermaid
 flowchart TD
-A([INICIO]) --> B{{Digite o custo de fábrica do carro: }}
-B --> C[/custoFabrica/]
-C --> D{custoFabrica > -1}
-D --FALSE--> E{{"'Informe um valor positivo'"}}
-D --TRUE--> F["custoConsumidor = custoFabrica + (custoFabrica * 0.12) + (custoFabrica * 0.45)"]
-F --> G{{"'O valor do carro para o consumidor será de R$ ', custoFabrica"}}
-E --> H([FIM])
-G --> H([FIM])
+A([INICIO]) --> B{{Digite o salário e profissão}}
+B --> C[\sal, prof\]
+C --> D{prof == 'Tecnico'}
+D --FALSE--> E{prof == 'Gerente'}
+D --TRUE--> F[sal_reaj = 1.5 * sal]
+E --FALSE--> H[sal_reaj = 1.1 * sal]
+E --TRUE--> G[sal_reaj = 1.3 * sal]
+G --> I([FIM])
+F --> I
+H --> J{{'Salário Reajustado = ', sal_reaj}}
+J --> I
 ```
+
 #### Pseudocódigo
 ```
-1)	ALGORITMO conversor_custo_consumidor
-2)	DECLARE custoFabrica, custoConsumidor: FLOAT
-3)	INICIO
-4)	ESCREVA 'Digite o custo de fábrica do carro: '
-5)	LEIA custoFabrica
-6)	SE custoFabrica > -1 ENTAO
-7)		custoConsumidor = custoFabrica + (custoFabrica * 0.12) + (custoFabrica * 0.45)
-8)		ESCREVA 'O valor do carro para o consumidor será de R$ ', custoFabrica
-9)	SENAO 
-10)	ESCREVA 'Informe um valor positivo'
-11) FIM_SE
-12)	FIM
+1  ALGORITMO calReajuste
+2  DECLARE  sal, sal_reaj: real, prof: caractere
+3  INICIO
+4  LEIA sal, prof
+5  ESCOLHA
+6   CASO prof == “Técnico”		// caso 1
+7     sal_reaj ← 1.5 * sal
+8   CASO prof = “Gerente”		// caso 2
+9     sal_reaj ← 1.3 * sal
+10  SENÃO
+11    sal_reaj ← 1.1 * sal
+12 FIM_ESCOLHA
+13 ESCREVA “Salário Reajustado = “, sal_reaj
+14 FIM
 ```
-#### Tabela Teste
-| custoFabrica | custoFabrica > -1 | custoConsumidor | Saída |
-|--- |--- |--- |--- |
-| -2000000 | false |  | 'Informe um valor positivo' |
-| 0 | true | 0 | 'O valor do carro para o consumidor será de R$ 0'| |
-| 3500000 | true | 5495000 | 'O valor do carro para o consumidor será de R$ 5495000' |
+
+#### Teste
+| sal | prof | prof == “Técnico” | prof = “Gerente” | sal_reaj | Saída |
+| -- | -- | -- | -- | -- | -- |
+| 1000 | Técnico | V | F | 1500 | “Salário Reajustado = 1500“ |
+| 2000 | Gerente | F | V | 2600 | “Salário Reajustado = 2600“ |
+| 9000 | Diretor | F | F | 9900 | “Salário Reajustado = 9900“ |
+
+## Lista de exercícios 02
+
+### Exercício 01 (2.5 pontos)
+Calcule a média de quatro números inteiros dados.
+
+#### Fluxograma (1.0 ponto)
+
+```mermaid
+flowchart TD
+A([INICIO]) --> B([FIM])
+```
+
+#### Pseudocódigo (1.0 ponto)
+
+```
+Algoritmo Media
+FIM_ALGORITMO
+```
+
+#### Teste de mesa (0.5 ponto)
+
+| nome_coluna1 | nome_coluna2 | nome_coluna3 | nome_coluna4 | nome_coluna5 | 
+|      --      |      --      |      --      |      --      |      --      | 
+| Adicione     | espaço       | se quiser    |  alinhar     | as barras    |
+| verticais,   | mas          | não é        | obrigatório. | Entendido ?  |
+
+### Exercício 02 (2.5 pontos)
+Leia uma temperatura dada em Celsius (C) e imprima o equivalente em Fahrenheit (F). (Fórmula de conversão: F = (9/5) * C + 32)
+
+#### Fluxograma (1.0 ponto)
+
+```mermaid
+flowchart TD
+A([INICIO]) --> B([FIM])
+```
+
+#### Pseudocódigo (1.0 ponto)
+
+```
+Algoritmo ConverteCelsiusFarenheit
+FIM_ALGORITMO
+```
+
+#### Teste de mesa (0.5 ponto)
+
+| nome_coluna1 | nome_coluna2 | nome_coluna3 | nome_coluna4 | nome_coluna5 | 
+|      --      |      --      |      --      |      --      |      --      | 
+| Adicione     | espaço       | se quiser    |  alinhar     | as barras    |
+| verticais,   | mas          | não é        | obrigatório. | Entendido ?  |
+
+### Exercício 03 (2.5 pontos)
+Receba dois números reais e um operador e efetue a operação correspondente com os valores recebidos (operandos). 
+O algoritmo deve retornar o resultado da operação selecionada simulando todas as operações de uma calculadora simples.
+
+#### Fluxograma (1.0 ponto)
+
+```mermaid
+flowchart TD
+A([INICIO]) --> B([FIM])
+```
+
+#### Pseudocódigo (1.0 ponto)
+
+```
+Algoritmo Calculadora
+FIM_ALGORITMO
+```
+
+#### Teste de mesa (0.5 ponto)
+
+| nome_coluna1 | nome_coluna2 | nome_coluna3 | nome_coluna4 | nome_coluna5 | 
+|      --      |      --      |      --      |      --      |      --      | 
+| Adicione     | espaço       | se quiser    |  alinhar     | as barras    |
+| verticais,   | mas          | não é        | obrigatório. | Entendido ?  |
+
+### Exercício 04 (2.5 pontos)
+Elaborar um algoritmo que, dada a idade, classifique nas categorias: infantil A (5 - 7 anos), infantil B (8 -10 anos), juvenil A (11 - 13 anos), juvenil B (14 -17 anos) e adulto (maiores que 18 anos).
+
+#### Fluxograma (1.0 ponto)
+
+```mermaid
+flowchart TD
+A([INICIO]) --> B([FIM])
+```
+
+#### Pseudocódigo (1.0 ponto)
+
+```
+Algoritmo ClassificaCategoria
+FIM_ALGORITMO
+```
+
+#### Teste de mesa (0.5 ponto)
+
+| nome_coluna1 | nome_coluna2 | nome_coluna3 | nome_coluna4 | nome_coluna5 | 
+|      --      |      --      |      --      |      --      |      --      | 
+| Adicione     | espaço       | se quiser    |  alinhar     | as barras    |
+| verticais,   | mas          | não é        | obrigatório. | Entendido ?  |
