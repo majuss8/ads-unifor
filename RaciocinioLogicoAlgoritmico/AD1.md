@@ -287,7 +287,7 @@ J --> K([FIM])
 E --"i=0,1,2,..,n"--> F[numerador = 2 * i + 1]
 F --> G[denominador = 2 * i + 2]
 G --> H[termo = numerador / denominador]
-H --> I[S += termo]
+H --> I[S =+ termo]
 I --LOOP--> E
 ```
 
