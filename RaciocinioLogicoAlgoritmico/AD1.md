@@ -1,3 +1,5 @@
+<img src="https://drive.google.com/uc?id=1SOzRTjUt7cuBJpSqoK90fcAiKBrnpUJo" width="400">
+
 **Curso:** Análise e Desenvolvimento de Sistemas <br>
 **Disciplina:** Raciocínio Lógico Algoritmico<br>
 **Código/Turma:** preencha com seus dados <br>
