@@ -65,8 +65,8 @@ B --> C[\salario\]
 C --> D{salario >= 0}
 D --FALSE--> E{{"O valor deve ser postivo!"}}
 D --TRUE--> F{salario <= 500}
-F --FALSE--> G["salario += salario + (salario * 0.10)"]
-F --TRUE--> H["salario += salario + (salario * 0.20)"]
+F --FALSE--> G["salario =+ salario + (salario * 0.10)"]
+F --TRUE--> H["salario =+ salario + (salario * 0.20)"]
 G --> I{{'O novo salário será de R$ ', salario}}
 H --> I
 I --> J([FIM])
@@ -82,10 +82,10 @@ Algoritmo novo_salario
 4	LEIA salario 
 5	SE salario >= 0 ENTAO
 6		SE salario <= 500 ENTAO
-7			salario += salario + (salario * 0.20)
+7			salario =+ salario + (salario * 0.20)
 8			ESCREVA 'O novo salário será de R$ ', salario
 9		SENAO
-10			salario += salario + (salario * 0.10)
+10			salario =+ salario + (salario * 0.10)
 11			ESCREVA 'O novo salário será de R$ ', salario
 12		FIM_SE
 13	SENAO
