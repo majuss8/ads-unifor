@@ -477,10 +477,23 @@ E --> W
 #### Pseudocódigo (2 pontos)
 
 ```
-Algoritmo InverteInteiro
-INICIO
-
-FIM
+1	Algoritmo InverteInteiro
+2	DECLARE num, num_inv, digito, numero: INTEIRO
+3	INICIO
+4	ESCREVA "Digite um número inteiro: "
+5	LEIA num
+6	SE num >= 0 ENTAO
+7		num_inv <- 0
+8		ENQUANTO num > 0 FAÇA
+9			digito <- num % 10
+10			num_inv <- num_inv * 10 + digito
+11			numero <- numero // 10
+12		FIM_ENQUANTO
+13		ESCREVA "Número invertido:", numero_inv
+14	SENAO
+15		ESCREVA O número deve ser positivo!
+16	FIM_SE
+17	FIM_ALGORITMO
 ```
 
 #### Teste de mesa
