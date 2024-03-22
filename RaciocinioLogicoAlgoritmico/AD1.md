@@ -2,7 +2,7 @@
 
 **Curso:** Análise e Desenvolvimento de Sistemas <br>
 **Disciplina:** Raciocínio Lógico Algoritmico<br>
-**Código/Turma:** preencha com seus dados <br>
+**Código/Turma:** T160-80 <br>
 **Professor:** Ricardo Carubbi <br>
 **Data:** 21/03/2024 <br>
 **Aluno(a):** Maria Júlia Soares Siqueira Melo <br>
